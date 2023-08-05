@@ -1,0 +1,24 @@
+[
+  {
+    "name": "my-container",
+    "image": "123456789012.dkr.ecr.us-west-2.amazonaws.com/my-ecr-repo:latest", // Replace with your ECR image URI
+    "memory": 512,
+    "cpu": 256,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 80,
+        "hostPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "my-log-group",
+        "awslogs-region": "us-west-2",
+        "awslogs-stream-prefix": "my-container"
+      }
+    }
+  }
+]
